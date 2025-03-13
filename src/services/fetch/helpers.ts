@@ -1,9 +1,8 @@
 import { match } from 'path-to-regexp'
-import { ZodType } from 'zod'
 
 import { apiSchemas } from 'services/api/schema-registry'
 
-export const findZodSchemaByURL = (requestURL: string): ZodType | undefined => {
+export const findZodSchemaByURL = (requestURL: string) => {
 	const url = new URL(requestURL)
 
 	for (const path in apiSchemas) {
