@@ -3,14 +3,8 @@ import { ZodType } from 'zod'
 
 import { apiSchemas } from 'services/api/schema-registry'
 
-const paths = ['/', '/users', '/users/:id'] as const
-
 export const findZodSchemaByURL = (requestURL: string): ZodType | undefined => {
 	const url = new URL(requestURL)
-
-	for (const path of paths) {
-		console.log('path', path)
-	}
 
 	for (const path in apiSchemas) {
 		const pathKey = path as keyof typeof apiSchemas
