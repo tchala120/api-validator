@@ -30,7 +30,7 @@ export const fetch = ky.create({
 					return response
 				}
 
-				throw new Error(result.error.errors.map((error) => error.message).join('\n'))
+				throw result.error
 			},
 		],
 	},
